@@ -1,10 +1,10 @@
-import styled from "styled-components";
 import Search from "../components/Search";
 import Logo from "../components/Logo";
 import Info1 from "./Info1";
 import Info2 from "./Info2";
 import Info3 from "./Info3";
 import { useState } from "react";
+import './style.css'
 
 function WeatherApp() {
   const [weatherInfo, setWeatherInfo] = useState({
@@ -24,7 +24,8 @@ function WeatherApp() {
 
   return (
     <>
-      <WeatherContainer>
+      <div className='container'>
+        <div className="initials">Made by Dhruv Pal❤️</div>
         <div className="topCont">
           <Logo />
           <Search updateWeatherInfo={updateWeatherInfo} />
@@ -34,35 +35,10 @@ function WeatherApp() {
           <Info2 info={weatherInfo} />
           <Info3 info={weatherInfo} />
         </div>
-      </WeatherContainer>
+      </div>
     </>
   );
 }
 
 export default WeatherApp;
-let WeatherContainer = styled.div`
-  width: 100%;
-  height: 100vh;
-  /* background-color: #0b131e; */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../public/images/bgImg.jpg");
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .topCont {
-    width: 68%;
-    height: 10vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  .bodyCont {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-`;
+

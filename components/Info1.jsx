@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 export default function Info1({info}) {
   let imgNum = 1;
   let humidityPercentage = 0;
@@ -41,7 +39,7 @@ export default function Info1({info}) {
 
   return (
     <>
-      <Box1>
+      <div className="Box1">
         <div className="Box1text">
           <div>
             <h1>{info.name}</h1>
@@ -54,44 +52,7 @@ export default function Info1({info}) {
         <div className="Box1image">
           <img src={`../public/images/${imgNum}.png`} />
         </div>
-      </Box1>
+      </div>
     </>
   );
 }
-
-let Box1 = styled.div`
-  width: 80%;
-  height: 28vh;
-  display: flex;
-  background-color: rgba(62, 62, 62, 0.8);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0px 0px 10px #161616;
-  .Box1text {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem 0;
-    color: #fff;
-    div h1 {
-      font-size: 2.5rem;
-    }
-    div p {
-      font-size: 1rem;
-      color: #8b8b8b;
-    }
-    div h2 {
-      font-size: 3.5rem;
-    }
-  }
-  .Box1image {
-    width: 50%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    img {
-      height: 100%;
-    }
-  }
-`;
